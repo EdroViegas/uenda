@@ -36,7 +36,7 @@ class Profile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             UserCard(
-              name: "Jane Doe Ellen",
+              name: "Jane Doe Elena",
               phone: "+244 945 678 456",
               imgUrl: "assets/images/XzAzMDE4MzAuanBn.jpg",
             ),
@@ -178,7 +178,7 @@ class Profile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Card(
                 child: Container(
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
                   decoration: BoxDecoration(),
                   child: Column(
                     children: [

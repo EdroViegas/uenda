@@ -13,17 +13,18 @@ class TripType extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                decoration: BoxDecoration(
+              height: 60,
+              width: 60,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: Colors.grey[200],
-                ),
-                child: Icon(
-                  imageUrl,
-                  color: Colors.red,
-                  size: 60,
-                )),
+                  //color: Colors.grey[200],
+                  image: DecorationImage(
+                      image: AssetImage(
+                        imageUrl,
+                      ),
+                      fit: BoxFit.contain)),
+            ),
             SizedBox(
               height: 10,
             ),

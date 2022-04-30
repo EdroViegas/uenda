@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:uenda/colors.dart';
 import 'package:uenda/views/profile/profile.dart';
 import 'package:uenda/widgets/trip_type.dart';
+
+import '../trip/book_trip.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -77,16 +79,36 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 height: 100,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return TripType(
-                      name: "Recauchutagem ${++index}",
-                      imageUrl: Icons.car_repair,
-                    );
-                  },
-                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          print("Tapped Viagem");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const BookTrip()),
+                          );
+                        },
+                        child: TripType(
+                          name: "Viagem",
+                          imageUrl: "assets/images/taxi.png",
+                        ),
+                      ),
+                      TripType(
+                        name: "Ambulância",
+                        imageUrl: "assets/images/ambulance.png",
+                      ),
+                      TripType(
+                        name: "Reboque",
+                        imageUrl: "assets/images/reboque.png",
+                      ),
+                      TripType(
+                        name: "Recauchutagem",
+                        imageUrl: "assets/images/reboque.png",
+                      )
+                    ]),
               ),
               SizedBox(
                 height: 10,
@@ -100,12 +122,8 @@ class HomePage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        child: TextField(
-                          decoration: InputDecoration(
-                              hintText: "Para onde ?",
-                              hintStyle: TextStyle(color: mainColor),
-                              border: InputBorder.none),
-                        ),
+                        margin: const EdgeInsets.only(left:5.0),
+                        child:Text("Para onde ?")
                       ),
                     ),
                     Card(
