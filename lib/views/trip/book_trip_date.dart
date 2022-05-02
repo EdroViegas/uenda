@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
+import 'package:date_time_picker/date_time_picker.dart';
 
-class BookTrip extends StatelessWidget {
-  const BookTrip({Key? key}) : super(key: key);
+class BookTripDate extends StatelessWidget {
+  const BookTripDate({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class BookTrip extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
-          "Serviços",
+          "Reserva de Viagem",
           style: TextStyle(color: mainColor),
         ),
         iconTheme: IconThemeData(
@@ -42,11 +43,24 @@ class BookTrip extends StatelessWidget {
               child: Container(
                 //color: Colors.black,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 30,
+                      height: 10,
+                    ),
+                    DateTimePicker(
+                      initialValue: '',
+                      firstDate: DateTime(2000),
+                      lastDate: DateTime(2100),
+                      dateLabelText: 'Data',
+                      onChanged: (val) => print(val),
+                      validator: (val) {
+                        print(val);
+                        return null;
+                      },
+                      onSaved: (val) => print(val),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     //Colocar como default o tipo de serviço selecionado na tela anterior
                     Container(
@@ -54,20 +68,17 @@ class BookTrip extends StatelessWidget {
                           border: Border(
                               bottom: BorderSide(
                                   width: 1, color: Colors.greenAccent))),
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Tipo de serviço: ",
-                                style: TextStyle(fontSize: 16)),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              "Reboque",
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.green),
-                            )
-                          ]),
+                      child: DropdownButton<String>(
+                        isExpanded: true,
+                        hint: Text("Tipo de serviços"),
+                        items: <String>['', 'A', 'C', 'D'].map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (_) {},
+                      ),
                     ),
                     SizedBox(
                       height: 10,

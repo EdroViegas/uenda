@@ -5,6 +5,7 @@ import 'package:uenda/views/profile/profile.dart';
 import 'package:uenda/widgets/trip_type.dart';
 
 import '../trip/book_trip.dart';
+import '../trip/book_trip_date.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -122,29 +123,34 @@ class HomePage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        margin: const EdgeInsets.only(left:5.0),
-                        child:Text("Para onde ?")
-                      ),
+                          margin: const EdgeInsets.only(left: 5.0),
+                          child: Text("Para onde ?")),
                     ),
-                    Card(
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 12),
-                        decoration: BoxDecoration(color: Colors.white),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.location_on,
-                              color: mainColor,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Agendar",
-                              style: TextStyle(color: mainColor),
-                            ),
-                          ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => BookTripDate()));
+                      },
+                      child: Card(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 12),
+                          decoration: BoxDecoration(color: Colors.white),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: mainColor,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Agendar",
+                                style: TextStyle(color: mainColor),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
