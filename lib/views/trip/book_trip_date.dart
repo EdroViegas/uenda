@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 
+import '../negotiation/set_value.dart';
+
 class BookTripDate extends StatelessWidget {
   const BookTripDate({Key? key}) : super(key: key);
 
@@ -272,6 +274,8 @@ class BookTripDate extends StatelessWidget {
             InkWell(
               onTap: () {
                 print("Pressed");
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => SetValue()));
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
