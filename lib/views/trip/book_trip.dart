@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
+import 'package:uenda/views/trip/book_trip_confirmation.dart';
+
+import '../negotiation/set_value.dart';
 
 class BookTrip extends StatelessWidget {
-  const BookTrip({Key? key}) : super(key: key);
+  final service;
+  const BookTrip({Key? key, this.service}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +54,7 @@ class BookTrip extends StatelessWidget {
                     ),
                     //Colocar como default o tipo de serviço selecionado na tela anterior
                     Container(
+                      padding: const EdgeInsets.only(bottom: 15),
                       decoration: BoxDecoration(
                           border: Border(
                               bottom: BorderSide(
@@ -57,16 +62,16 @@ class BookTrip extends StatelessWidget {
                       child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Tipo de serviço: ",
+                            Text("Tipo de serviço: ".toUpperCase(),
                                 style: TextStyle(fontSize: 16)),
                             SizedBox(
-                              height: 8,
+                              width: 8,
                             ),
                             Text(
-                              "Reboque",
+                              "$service".toUpperCase(),
                               style:
                                   TextStyle(fontSize: 16, color: Colors.green),
-                            )
+                            ),
                           ]),
                     ),
                     SizedBox(
@@ -237,6 +242,9 @@ class BookTrip extends StatelessWidget {
             InkWell(
               onTap: () {
                 print("Pressed");
+
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => BookTripConfirmation()));
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -261,20 +269,20 @@ class BookTrip extends StatelessWidget {
             InkWell(
               onTap: () {
                 print("Pressed");
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => SetValue()));
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: Color(0xff1a9249),
-                      borderRadius: BorderRadius.all(Radius.circular(4)),
-                    ),
-                    child: Center(
-                      child: Text("Negociar o valor",
-                          style: TextStyle(color: Colors.white, fontSize: 20)),
-                    ),
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Color(0xff1a9249),
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                  ),
+                  child: Center(
+                    child: Text("Negociar o valor",
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
                   ),
                 ),
               ),

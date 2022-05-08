@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:uenda/colors.dart';
 import 'package:uenda/views/profile/profile.dart';
+import 'package:uenda/views/story/story.dart';
 import 'package:uenda/widgets/trip_type.dart';
 
 import '../trip/book_trip.dart';
 import '../trip/book_trip_date.dart';
+import '../trip/trip_where_to.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -89,7 +91,9 @@ class HomePage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const BookTrip()),
+                                builder: (context) => const BookTrip(
+                                      service: "Viagem",
+                                    )),
                           );
                         },
                         child: TripType(
@@ -97,18 +101,54 @@ class HomePage extends StatelessWidget {
                           imageUrl: "assets/images/taxi.png",
                         ),
                       ),
-                      TripType(
-                        name: "Ambulância",
-                        imageUrl: "assets/images/ambulance.png",
+                      InkWell(
+                        onTap: () {
+                          print("Tapped Viagem");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const BookTrip(
+                                      service: "Ambulância",
+                                    )),
+                          );
+                        },
+                        child: TripType(
+                          name: "Ambulância",
+                          imageUrl: "assets/images/ambulance.png",
+                        ),
                       ),
-                      TripType(
-                        name: "Reboque",
-                        imageUrl: "assets/images/reboque.png",
+                      InkWell(
+                        onTap: () {
+                          print("Tapped Reboque");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const BookTrip(
+                                      service: "Reboque",
+                                    )),
+                          );
+                        },
+                        child: TripType(
+                          name: "Reboque",
+                          imageUrl: "assets/images/reboque.png",
+                        ),
                       ),
-                      TripType(
-                        name: "Recauchutagem",
-                        imageUrl: "assets/images/reboque.png",
-                      )
+                      InkWell(
+                        onTap: () {
+                          print("Tapped Recauchutagem");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const BookTrip(
+                                      service: "Recauchutagem",
+                                    )),
+                          );
+                        },
+                        child: TripType(
+                          name: "Recauchutagem",
+                          imageUrl: "assets/images/reboque.png",
+                        ),
+                      ),
                     ]),
               ),
               SizedBox(
@@ -124,7 +164,12 @@ class HomePage extends StatelessWidget {
                     Expanded(
                       child: Container(
                           margin: const EdgeInsets.only(left: 5.0),
-                          child: Text("Para onde ?")),
+                          child: InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => TripWhereTo()));
+                              },
+                              child: Text("Para onde ?"))),
                     ),
                     InkWell(
                       onTap: () {
@@ -163,31 +208,40 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                child: Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: simpleGray,
-                            borderRadius: BorderRadius.circular(100)),
-                        child: Icon(
-                          Icons.location_on,
-                          color: mainColor,
-                          size: 35,
+                child: InkWell(
+                  onTap: () {
+                    print("Tapped");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Story()),
+                    );
+                  },
+                  child: Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: simpleGray,
+                              borderRadius: BorderRadius.circular(100)),
+                          child: Icon(
+                            Icons.location_on,
+                            color: mainColor,
+                            size: 35,
+                          ),
                         ),
-                      ),
-                      Text(
-                        "Escolher um local guardado ",
-                        style: TextStyle(color: mainColor, fontSize: 18),
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_right_rounded,
-                        size: 35,
-                        color: mainColor,
-                      )
-                    ],
+                        Text(
+                          "Escolher um local guardado ",
+                          style: TextStyle(color: mainColor, fontSize: 18),
+                        ),
+                        Icon(
+                          Icons.keyboard_arrow_right_rounded,
+                          size: 35,
+                          color: mainColor,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

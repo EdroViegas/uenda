@@ -3,6 +3,7 @@ import 'package:uenda/colors.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 
 import '../negotiation/set_value.dart';
+import 'book_trip_confirmation.dart';
 
 class BookTripDate extends StatelessWidget {
   const BookTripDate({Key? key}) : super(key: key);
@@ -250,6 +251,8 @@ class BookTripDate extends StatelessWidget {
             InkWell(
               onTap: () {
                 print("Pressed");
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => BookTripConfirmation()));
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -280,16 +283,14 @@ class BookTripDate extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: Color(0xff1a9249),
-                      borderRadius: BorderRadius.all(Radius.circular(4)),
-                    ),
-                    child: Center(
-                      child: Text("Negociar o valor",
-                          style: TextStyle(color: Colors.white, fontSize: 20)),
-                    ),
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Color(0xff1a9249),
+                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                  ),
+                  child: Center(
+                    child: Text("Negociar o valor",
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
                   ),
                 ),
               ),

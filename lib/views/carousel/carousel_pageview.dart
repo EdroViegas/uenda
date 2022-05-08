@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:uenda/views/widgets/custom_carrossel_page.dart';
 
 class CarouselPageView extends StatefulWidget {
   @override
@@ -58,25 +57,6 @@ class _CarouselPageViewState extends State<CarouselPageView> {
                 ],
               ),
             ),
-          ),
-          CustomCarrosselPage(
-            pageController: pageController,
-            imgPath: 'assets/images/Archive_2.png',
-            title: 'Recicle +, Ganhe +',
-            message:
-                'Valorize os seus residuos comprando e vendendo, pois com a Recicle +, Ganhe +',
-            btnText: 'Continuar',
-            goHome: false,
-            nextPage: 1,
-          ),
-          CustomCarrosselPage(
-            pageController: pageController,
-            imgPath: 'assets/images/Archive_3.png',
-            title: 'Residuos',
-            message: 'Lixo de uns, Luxo de outros',
-            btnText: 'Continuar',
-            goHome: true,
-            nextPage: 2,
           ),
         ],
       ),
