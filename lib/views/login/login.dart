@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/views/home/home.dart';
 
+import '../driver/profile/driver_profile.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -100,10 +102,36 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.all(15),
                     decoration: BoxDecoration(
                       color: Color(0xff1a9249),
-                      borderRadius: BorderRadius.all(Radius.circular(0)),
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
                     ),
                     child: Center(
                       child: Text("Entrar",
+                          style: TextStyle(color: Colors.white, fontSize: 20)),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              InkWell(
+                onTap: () {
+                  print("Pressed");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DriverProfile()),
+                  );
+                },
+                child: Container(
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                    ),
+                    child: Center(
+                      child: Text("Atalho para telas do motorista",
                           style: TextStyle(color: Colors.white, fontSize: 20)),
                     ),
                   ),
