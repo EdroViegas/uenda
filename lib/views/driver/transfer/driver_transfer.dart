@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
-import 'package:uenda/views/profile/transfer_resume.dart';
-import 'package:uenda/views/profile/widgets/user_card.dart';
+import 'package:uenda/views/driver/transfer/driver_transfer_resume.dart';
 
-import 'package:uenda/views/welcome/welcome_third.dart';
-
-class Transfer extends StatelessWidget {
-  const Transfer({Key? key}) : super(key: key);
+class DriverTransfer extends StatelessWidget {
+  const DriverTransfer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +174,7 @@ class Transfer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const TransferResume()),
+                      builder: (context) => const DriverTransferResume()),
                 );
               },
               child: Padding(

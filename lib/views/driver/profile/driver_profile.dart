@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
+import 'package:uenda/views/driver/notification/driver_notification.dart';
 import 'package:uenda/views/driver/profile/widgets/driver_user_card.dart';
-import 'package:uenda/views/profile/edit_profile.dart';
-import 'package:uenda/views/profile/transfer.dart';
+import 'package:uenda/views/driver/story/driver_story.dart';
 
 import '../solicitation/solicitation.dart';
 import '../wallet/wallet.dart';
+import 'driver_edit_profile.dart';
+import 'driver_info.dart';
 
 class DriverProfile extends StatelessWidget {
   const DriverProfile({Key? key}) : super(key: key);
@@ -25,9 +27,49 @@ class DriverProfile extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const EditProfile()),
+                MaterialPageRoute(
+                    builder: (context) => const DriverEditProfile()),
               );
             },
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Stack(
+              alignment: Alignment.topRight,
+              children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.notifications_sharp,
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DriverNotification()),
+                    );
+                  },
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: Container(
+                    height: 22.0,
+                    width: 22.0,
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 0),
+                      color: Colors.green[600],
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: Center(
+                        child: Text(
+                      "8",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),
@@ -41,6 +83,7 @@ class DriverProfile extends StatelessWidget {
               name: "Jane Doe Elena",
               phone: "+244 945 678 456",
               imgUrl: "assets/images/XzAzMDE4MzAuanBn.jpg",
+              type: "Económico",
             ),
             SizedBox(
               height: 10.0,
@@ -98,7 +141,7 @@ class DriverProfile extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => Transfer(),
+                      builder: (context) => DriverInfo(),
                     ),
                   );
                 },
@@ -170,7 +213,7 @@ class DriverProfile extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => Transfer(),
+                      builder: (context) => DriverStory(),
                     ),
                   );
                 },
@@ -181,7 +224,7 @@ class DriverProfile extends StatelessWidget {
                     child: Row(
                       children: [
                         Icon(
-                          Icons.notifications_sharp,
+                          Icons.alarm_on,
                           size: 40,
                           color: mainColor,
                         ),
@@ -189,7 +232,7 @@ class DriverProfile extends StatelessWidget {
                           width: 10,
                         ),
                         Text(
-                          "Notificações",
+                          "Histórico",
                           style: TextStyle(
                             fontSize: 20,
                           ),
@@ -203,13 +246,7 @@ class DriverProfile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => Transfer(),
-                    ),
-                  );
-                },
+                onTap: () {},
                 child: Card(
                   child: Container(
                     padding: EdgeInsets.all(15),
@@ -239,13 +276,7 @@ class DriverProfile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => Transfer(),
-                    ),
-                  );
-                },
+                onTap: () {},
                 child: Card(
                   child: Container(
                     padding: EdgeInsets.all(15),

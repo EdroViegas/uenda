@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
+import 'package:uenda/views/driver/transfer/driver_transfer.dart';
 
 class Wallet extends StatelessWidget {
   const Wallet({Key? key}) : super(key: key);
@@ -122,7 +123,10 @@ class Wallet extends StatelessWidget {
                       Container(
                         child: Text(
                           "+150.000 Kz",
-                          style: TextStyle(color: Colors.green, fontSize: 18),
+                          style: TextStyle(
+                              color: Colors.green,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -166,7 +170,13 @@ class Wallet extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => DriverTransfer(),
+                  ),
+                );
+              },
               child: Card(
                 child: Container(
                   padding: EdgeInsets.all(15),
@@ -193,10 +203,6 @@ class Wallet extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ),
-                      Text(
-                        "4",
-                        style: TextStyle(fontSize: 20, color: Colors.green),
                       ),
                     ],
                   ),

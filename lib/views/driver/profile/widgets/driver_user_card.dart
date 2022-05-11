@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
 
 class DriverUserCard extends StatelessWidget {
-  final name, phone, imgUrl;
-  const DriverUserCard({Key? key, this.name, this.phone, this.imgUrl})
+  final name, phone, imgUrl, type;
+  const DriverUserCard(
+      {Key? key, this.name, this.phone, this.type, this.imgUrl})
       : super(key: key);
 
   @override
@@ -55,9 +56,9 @@ class DriverUserCard extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
                   SizedBox(
-                    height: 10.0,
+                    height: type != null ? 10.0 : 0,
                   ),
-                  Text("Económico",
+                  Text(type != null ? "$type" : "",
                       style: TextStyle(color: Colors.white, fontSize: 18))
                 ],
               ),

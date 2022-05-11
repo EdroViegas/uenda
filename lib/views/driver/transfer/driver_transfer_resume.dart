@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
 
-class TransferResume extends StatelessWidget {
-  const TransferResume({Key? key}) : super(key: key);
+class DriverTransferResume extends StatelessWidget {
+  const DriverTransferResume({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
