@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
-import 'package:uenda/views/trip/trip_whereto_confirm.dart';
+import 'package:uenda/views/customer/trip/trip_whereto_confirm.dart';
 
 class TripWhereTo extends StatelessWidget {
   const TripWhereTo({Key? key}) : super(key: key);

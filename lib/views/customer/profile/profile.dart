@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
-import 'package:uenda/main.dart';
-import 'package:uenda/views/profile/edit_profile.dart';
-import 'package:uenda/views/profile/transfer.dart';
-import 'package:uenda/views/profile/widgets/user_card.dart';
-import 'package:uenda/widgets/trip_type.dart';
+import 'package:uenda/views/customer/profile/edit_profile.dart';
+import 'package:uenda/views/customer/profile/transfer.dart';
+import 'package:uenda/views/customer/profile/widgets/user_card.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -178,7 +176,7 @@ class Profile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Card(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   decoration: BoxDecoration(),
                   child: Column(
                     children: [

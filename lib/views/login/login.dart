@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uenda/views/home/home.dart';
+import 'package:uenda/views/customer/home/home.dart';
 
 import '../driver/profile/driver_profile.dart';
 

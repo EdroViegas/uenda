@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
-import 'package:uenda/views/profile/widgets/user_card.dart';
+import 'package:uenda/views/customer/profile/widgets/user_card.dart';
 
 import 'package:uenda/views/welcome/welcome_third.dart';
 

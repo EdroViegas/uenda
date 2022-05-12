@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:uenda/colors.dart';
-import 'package:uenda/views/profile/profile.dart';
-import 'package:uenda/views/story/story.dart';
+import 'package:uenda/views/customer/profile/profile.dart';
+import 'package:uenda/views/customer/story/story.dart';
+
 import 'package:uenda/widgets/trip_type.dart';
 
 import '../trip/book_trip.dart';

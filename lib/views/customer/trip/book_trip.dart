@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
-import 'package:uenda/views/trip/book_trip_confirmation.dart';
+import 'package:uenda/views/customer/trip/book_trip_confirmation.dart';
 
 import '../negotiation/set_value.dart';
 

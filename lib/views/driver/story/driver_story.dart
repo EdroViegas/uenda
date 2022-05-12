@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uenda/colors.dart';
-import 'package:uenda/views/story/story_card.dart';
+import 'package:uenda/views/customer/story/story_card.dart';
 
 class DriverStory extends StatelessWidget {
   const DriverStory({Key? key}) : super(key: key);
